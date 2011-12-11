@@ -1,44 +1,62 @@
-# Markdown
-[Official Syntax](http://daringfireball.net/projects/markdown/syntax)
+プロジェクト・タイトル
+======================
+ここにプロジェクトの概要を書きます。
+行末にスペースを2つ入れると  
+改行されます。
 
-[Github Flavored Markdown](http://github.github.com/github-flavored-markdown/preview.html)
+段落を分けるには、[空行](http://example.com/) を入れます。
 
-# Heading 1
-    # Heading 1
+使い方
+------
+### インライン ###
+インラインのコードは、**バッククォート** (`` ` ``) で囲みます。
 
-## Heading 2
-    ## Heading 2
+### ブロックレベル ###
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        alert($); /* 先頭に4文字のスペース、
+                     もしくはタブを挿入します */
+    });
+    </script>
 
-# List
+パラメータの解説
+----------------
+リストの間に空行を挟むと、それぞれのリストに `<p>` タグが挿入され、行間が
+広くなります。
 
-- hi
- - ho
+    def MyFunction(param1, param2, ...)
 
-#
-    - hi
-     - ho
++   `param1` :  
+    _パラメータ1_ の説明
 
-# Code
-self.codeblock? #=> false
++   `param2` :  
+    _パラメータ2_ の説明
 
-    self.codeblock? #=> true
-    puts "OK"
-#
-    self.codeblock? #=> false
+関連情報
+--------
+### リンク、ネストしたリスト
+1. [リンク1](http://example.com/ "リンクのタイトル")
+    * ![画像1](http://github.com/unicorn.png "画像のタイトル")
+2. [リンク2][link]
+    - [![画像2][image]](https://github.com/)
 
-        self.codeblock? #=> true
-        puts "OK"
+  [link]: http://example.com/ "インデックス型のリンク"
+  [image]: http://github.com/github.png "インデックス型の画像"
 
-Use `code` in line.
+### 引用、ネストした引用
+> これは引用です。
+> 
+> > スペースを挟んで `>` を重ねると、引用の中で引用ができますが、
+> > GitHubの場合、1行前に空の引用が無いと、正しくマークアップされません。
 
-    Use `code` in line.
+ライセンス
+----------
+Copyright &copy; 2011 xxxxxx  
+Licensed under the [Apache License, Version 2.0][Apache]  
+Distributed under the [MIT License][mit].  
+Dual licensed under the [MIT license][MIT] and [GPL license][GPL].
 
-# Link
-http://github-preview.herokuapp.com/ will be autolinked in Github.
-
-     http://github-preview.herokuapp.com/ will be autolinked in Github.
-
-[Github Preview](http://github-preview.herokuapp.com/)
-
-     [Github Preview](http://github-preview.herokuapp.com/)
-
+[Apache]: http://www.apache.org/licenses/LICENSE-2.0
+[MIT]: http://www.opensource.org/licenses/mit-license.php
+[GPL]: http://www.gnu.org/licenses/gpl.html
