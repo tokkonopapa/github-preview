@@ -1,30 +1,37 @@
 !!! 5
 %html
   %head
-    %title Github Preview
-    %script{:type => "text/javascript", :src => "http://code.jquery.com/jquery-1.6.2.min.js"}
-    %script{:type => "text/javascript", :src => "http://documentcloud.github.com/underscore/underscore-min.js"}
-    %script{:type => "text/javascript", :src => "/scripts/app.js"}
-    %link{:href => "/stylesheets/github.css", :rel => "stylesheet", :type => "text/css" }
+    %title Github Markdown Preview
+    %link{:rel => "stylesheet", :href => "/stylesheets/github-wikistyle.css", :type => "text/css"}
+    %link{:rel => "stylesheet", :href => "/cheatsheets/markdown-help.css", :type => "text/css"}
   %body
     #header
-      %h1 Github Preview
+      -# %h1 Github Markdown Preview
       %p
-        Format: 
-        %select#format{:name => "format"}
+        -# Format: 
+        %select#format{:name => "format", :class => "hide"}
           %option markdown
-          %option textile
-          %option rdoc
-          %option org
-          %option creole
-          %option mediawiki
-        %a#showhelp{:href => "#"} Show Formating Help
+          -# %option textile
+          -# %option rdoc
+          -# %option org
+          -# %option creole
+          -# %option mediawiki
+        %a#showhelp{:href => "javascript:void(0)"} Show Template
         |
-        %a{:href => "https://github.com/kei-s/github-preview"} Source on Github
-    %table{:cellspacing => "0", :cellpadding => "0", :style => "margin: 0; padding: 6px 6px 0; width: 100%;"}
+        %a{:href => "/cheatsheets/markdown-help.html", :rel => "facebox"} Press 'm' to show a cheat sheet
+    %table{:cellspacing => "0", :cellpadding => "0", :style => "margin: 0; padding: 6px; width: 100%;"}
       %tr
         %td{:style => "vertical-align: top; width: 50%;"}
-          %textarea#text{:style => "width: 100%; height: 300px;"}
+          %textarea#text{:style => "width: 100%; height: 300px; padding: 2px; font: 14px/1.25 monospace,Consolas,'Bitstream Vera Sans Mono','Courier New',Courier;"}
         %td#readme.announce{:style => "vertical-align: top; width: 50%; height: 300px"}
           #preview.panel.wikistyle{:style => "margin: 1px 0 0 10px; padding: 0 10px 0 10px; overflow: auto;"}
-          #help.panel.wikistyle{:style => "margin: 1px 0 0 10px; padding: 0 10px 0 10px; overflow: auto;display: none;"}
+          -# #help.panel.wikistyle{:style => "margin: 1px 0 0 10px; padding: 0 10px 0 10px; overflow: auto;display: none;"}
+    #footer
+      %p
+        Forked from
+        %a{:href => "https://github.com/kei-s/github-preview", :target => "_blank"} 'kei-s/github-preview'
+        on GitHub
+    %script{:src => "http://code.jquery.com/jquery-1.7.1.min.js"}
+    %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.2/underscore-min.js"}
+    %script{:src => "/scripts/app.js"}
+    %script{:src => "/cheatsheets/markdown-help.js"}

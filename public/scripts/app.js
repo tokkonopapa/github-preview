@@ -1,6 +1,6 @@
 $(function(){
   function resize() {
-    var height = $(window).height() - $("#header").outerHeight() - 20;
+    var height = $(window).height() - ($("#header").outerHeight() + $("#footer").outerHeight()) - 75;
     $("#text").height(height);
     $(".panel").height(height);
   }
@@ -42,29 +42,38 @@ $(function(){
 
   var helpCaches = {};
   function showHelp() {
+    var fmt = $('#format').val();
     var renderHelp = function(data) {
       $('#showhelp').addClass('on').text('Show Preview');
-      $('#help').empty().append(data).show();
-      $('#preview').hide();
+      helpCaches[fmt] = $("#text").val();
+      $("#text").val(data);
+      render();
+//    $('#help').empty().append(data).show();
+//    $('#preview').hide();
     }
-    if (helpCaches[$('#format').val()]) {
-      renderHelp(helpCaches[$('#format').val()]);
+    if (helpCaches[fmt]) {
+      renderHelp(helpCaches[fmt]);
     }
     else {
       $.ajax({
         type: "GET",
-        url: "/help/"+$('#format').val(),
+        url: "/help/"+fmt,
         success: function(data) {
-          helpCaches[$('#format').val()] = data;
+          helpCaches[fmt] = data;
           renderHelp(data);
         }
       });
     }
   }
   function hideHelp() {
-    $('#showhelp').removeClass('on').text('Show Formating Help');
-    $('#help').hide();
-    $('#preview').show();
+    $('#showhelp').removeClass('on').text('Show Template');
+    var fmt = $('#format').val();
+    var data = $("#text").val();
+    $("#text").val(helpCaches[fmt]);
+    helpCaches[fmt] = data;
+    render();
+//  $('#help').hide();
+//  $('#preview').show();
   }
   $('#showhelp').click(function() {
     if ($('#showhelp').hasClass('on')) {

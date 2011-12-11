@@ -19,6 +19,7 @@ class Preview < Sinatra::Base
   get '/help/:format' do
     format = params[:format]
     file = "help/help.#{format}"
-    GitHub::Markup.render(file, File.read(file))
+    File.read(file)
+#   GitHub::Markup.render(file, File.read(file))
   end
 end
