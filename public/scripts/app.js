@@ -1,6 +1,6 @@
 $(function(){
   function resize() {
-    var height = $(window).height() - ($("#header").outerHeight() + $("#footer").outerHeight()) - 75;
+    var height = $(window).height() - ($("#header").outerHeight() + $("#footer").outerHeight()) - 50;
     $("#text").height(height);
     $(".panel").height(height);
   }
