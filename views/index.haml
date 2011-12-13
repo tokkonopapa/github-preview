@@ -6,7 +6,7 @@
     %link{:rel => "stylesheet", :href => "/cheatsheets/markdown-help.css", :type => "text/css"}
   %body
     #header
-      -# %h1 Github Markdown Preview
+      %h1 Github Markdown Preview
       %p
         -# Format: 
         %select#format{:name => "format", :class => "hide"}
@@ -26,11 +26,11 @@
         %td#readme.announce{:style => "vertical-align: top; width: 50%; height: 300px"}
           #preview.panel.wikistyle{:style => "margin: 1px 0 0 10px; padding: 0 10px 0 10px; overflow: auto;"}
           -# #help.panel.wikistyle{:style => "margin: 1px 0 0 10px; padding: 0 10px 0 10px; overflow: auto;display: none;"}
-    #footer
-      %p
-        Forked from
-        %a{:href => "https://github.com/kei-s/github-preview", :target => "_blank"} 'kei-s/github-preview'
-        on GitHub
+    -# #footer
+      -# %p
+        -# Forked from
+        -# %a{:href => "https://github.com/kei-s/github-preview", :target => "_blank"} 'kei-s/github-preview'
+        -# on GitHub
     %script{:src => "http://code.jquery.com/jquery-1.7.1.min.js"}
     %script{:src => "http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.2.2/underscore-min.js"}
     %script{:src => "/scripts/app.js"}
