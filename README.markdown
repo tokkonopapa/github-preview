@@ -14,4 +14,4 @@ About
 
 App on Heroku
 -------------
-[Github Markdown Preview](http://growing-winter-3139.heroku.com/)
+[Github Markdown Preview](http://github-markdown-preview.heroku.com/)
