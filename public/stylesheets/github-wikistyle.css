@@ -98,6 +98,10 @@ textarea {
 /*
  * Addresses outline displayed oddly in Chrome
  */
+a {
+    color: #4183C4;
+    text-decoration: none;
+}
 
 a:focus {
     outline: thin dotted;
@@ -123,7 +127,7 @@ a:active {
  */
 
 h1 {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 /*
@@ -240,11 +244,11 @@ sub {
 ul,
 ol {
     margin-left: 0;
-    padding: 0 0 0 40px;
+    padding: 0 0 0 10px;
 }
 
 dd {
-    margin: 0 0 0 40px;
+    margin: 0 0 0 10px;
 }
 
 nav ul,
